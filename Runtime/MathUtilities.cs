@@ -43,5 +43,25 @@ namespace GI.UnityToolkit.Utilities
         {
             return vector;
         }
+        
+        public static Vector3 Forward(this Quaternion rotation)
+        {
+            return rotation * Vector3.forward;
+        }
+        
+        /// <summary>
+        /// Returns the shortest signed angle from the first rotation to the second.
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <returns></returns>
+        public static float SignedAngleAboutY(Quaternion from, Quaternion to)
+        {
+            var forwardA = from * Vector3.forward;
+            var forwardB = to * Vector3.forward;
+            var angleA = Mathf.Atan2(forwardA.x, forwardA.z) * Mathf.Rad2Deg;
+            var angleB = Mathf.Atan2(forwardB.x, forwardB.z) * Mathf.Rad2Deg;
+            return Mathf.DeltaAngle(angleA, angleB);
+        }
     }
 }
