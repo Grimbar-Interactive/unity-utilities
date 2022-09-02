@@ -24,11 +24,33 @@ namespace GI.UnityToolkit.Utilities
         private static readonly Dictionary<float, WaitForSeconds> WaitTimes =
             new Dictionary<float, WaitForSeconds>(100, new FloatComparer());
 
+        private static readonly Dictionary<float, WaitForSecondsRealtime> WaitTimesRealtime =
+            new Dictionary<float, WaitForSecondsRealtime>(100, new FloatComparer());
+
+        /// <summary>
+        /// Waits an amount of time.
+        /// </summary>
+        /// <param name="seconds"></param>
+        /// <returns></returns>
         public static WaitForSeconds Time(float seconds)
         {
             if (!WaitTimes.TryGetValue(seconds, out var wfs))
             {
                 WaitTimes.Add(seconds, wfs = new WaitForSeconds(seconds));
+            }
+            return wfs;
+        }
+
+        /// <summary>
+        /// Waits an unscaled amount of time.
+        /// </summary>
+        /// <param name="seconds"></param>
+        /// <returns></returns>
+        public static WaitForSecondsRealtime RealTime(float seconds)
+        {
+            if (!WaitTimesRealtime.TryGetValue(seconds, out var wfs))
+            {
+                WaitTimesRealtime.Add(seconds, wfs = new WaitForSecondsRealtime(seconds));
             }
             return wfs;
         }
