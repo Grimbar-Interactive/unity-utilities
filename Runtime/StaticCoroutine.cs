@@ -53,21 +53,33 @@ namespace GI.UnityToolkit.Utilities
         // Overloaded Static Coroutine Methods which use Unity's default Coroutines.
         // Polymorphism applied for best compatibility with the standard engine.
         [UsedImplicitly]
-        public static void StartRoutine(string methodName)
+        public static Coroutine StartRoutine(string methodName)
         {
-            Build().StartCoroutine(methodName);
+            return Build().StartCoroutine(methodName);
         }
 
         [UsedImplicitly]
-        public static void StartRoutine(string methodName, object value)
+        public static Coroutine StartRoutine(string methodName, object value)
         {
-            Build().StartCoroutine(methodName, value);
+            return Build().StartCoroutine(methodName, value);
         }
 
         [UsedImplicitly]
-        public static void StartRoutine(IEnumerator routine)
+        public static Coroutine StartRoutine(IEnumerator routine)
         {
-            Build().StartCoroutine(routine);
+            return Build().StartCoroutine(routine);
+        }
+
+        [UsedImplicitly]
+        public static void StopRoutine(Coroutine routine)
+        {
+            Build().StopCoroutine(routine);
+        }
+
+        [UsedImplicitly]
+        public static void StopRoutine(string methodName)
+        {
+            Build().StopCoroutine(methodName);
         }
     }
 }
