@@ -1,7 +1,7 @@
 {
   "name": "com.grimbar-interactive.unity-utilities",
   "displayName": "Unity Utilities",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "unity": "2021.3",
   "description": "Utilities for Unity development.",
   "keywords": [ "utilities", "game", "games", "unity" ],
