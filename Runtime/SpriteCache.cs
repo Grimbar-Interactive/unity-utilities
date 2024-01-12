@@ -76,7 +76,7 @@ namespace GI.UnityToolkit.Utilities
 
                 if (request.result != UnityWebRequest.Result.Success)
                 {
-                    Debug.LogWarning("Failed to load sprite from URL \"{url}\"!");
+                    Debug.LogWarning($"Failed to load sprite from URL \"{url}\"!");
                     onCompleted?.Invoke(false);
                     yield break;
                 }
