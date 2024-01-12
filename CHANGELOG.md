@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ==
+## [1.0.9] - 2024- 01-12
+### Added
+- New SpriteCache class
+
 ## [1.0.8] - 2023-09-22
 ### Added
 - New GameObjectUtilities class
