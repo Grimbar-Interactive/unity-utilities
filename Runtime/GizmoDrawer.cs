@@ -25,12 +25,18 @@ namespace GI.UnityToolkit.Utilities
 
         private void OnDrawGizmos()
         {
-            Gizmos.color = color switch
+            switch (color)
             {
-                GizmoColor.Red => Color.red,
-                GizmoColor.Blue => Color.blue,
-                _ => Gizmos.color
-            };
+                case GizmoColor.Red:
+                    Gizmos.color = Color.red;
+                    break;
+                case GizmoColor.Blue:
+                    Gizmos.color = Color.blue;
+                    break;
+                default:
+                    Gizmos.color = Gizmos.color;
+                    break;
+            }
 
             switch (type)
             {

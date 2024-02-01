@@ -12,8 +12,8 @@ namespace GI.UnityToolkit.Utilities
     {
         private const int MAX_CACHE_AMOUNT = 100;
         
-        private static readonly Dictionary<string, LoadedSprite> Cache = new();
-        private static readonly Dictionary<Image, string> Loaded = new();
+        private static readonly Dictionary<string, LoadedSprite> Cache = new Dictionary<string, LoadedSprite>();
+        private static readonly Dictionary<Image, string> Loaded = new Dictionary<Image, string>();
 
         static SpriteCache()
         {
@@ -74,7 +74,11 @@ namespace GI.UnityToolkit.Utilities
                 var request = UnityWebRequestTexture.GetTexture(url);
                 yield return request.SendWebRequest();
 
+#if UNITY_2019
+                if (string.IsNullOrEmpty(request.error) == false)
+#else
                 if (request.result != UnityWebRequest.Result.Success)
+#endif
                 {
                     Debug.LogWarning($"Failed to load sprite from URL \"{url}\"!");
                     onCompleted?.Invoke(false);
