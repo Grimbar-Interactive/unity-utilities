@@ -48,7 +48,7 @@ namespace GI.UnityToolkit.Utilities
 #else
         [Conditional(LOGGING_RELEASE_DEFINE)]
 #endif
-        public static void Log(this object obj, string message, [CallerMemberName] string callerName = "")
+        public static void Log(object obj, string message, [CallerMemberName] string callerName = "")
         {
             Debug.Log($"{(obj != null ? $"[{obj.GetType().Name}.{callerName}()]" : "")} {message}");
         }
@@ -58,7 +58,7 @@ namespace GI.UnityToolkit.Utilities
 #else
         [Conditional(LOGGING_RELEASE_DEFINE)]
 #endif
-        public static void LogWarning(this object obj, string message, [CallerMemberName] string callerName = "")
+        public static void LogWarning(object obj, string message, [CallerMemberName] string callerName = "")
         {
             Debug.LogWarning($"{(obj != null ? $"[{obj.GetType().Name}.{callerName}()]" : "")} {message}");
         }
@@ -68,7 +68,7 @@ namespace GI.UnityToolkit.Utilities
 #else
         [Conditional(LOGGING_RELEASE_DEFINE)]
 #endif
-        public static void LogError(this object obj, string message, [CallerMemberName] string callerName = "")
+        public static void LogError(object obj, string message, [CallerMemberName] string callerName = "")
         {
             Debug.LogError($"{(obj != null ? $"[{obj.GetType().Name}.{callerName}()]" : "")} {message}");
         }
