@@ -1,6 +1,7 @@
 using System.Linq;
 using UnityEditor;
 using UnityEditor.Build;
+using UnityEditor.Compilation;
 
 namespace GI.UnityToolkit.Utilities.Editor
 {
@@ -18,9 +19,15 @@ namespace GI.UnityToolkit.Utilities.Editor
         {
             "GI_UTILITIES"
         };
-
+        
         public int callbackOrder => 0;
 
+        static AddDefineSymbols()
+        {
+            CompilationPipeline.compilationStarted += ProcessBatchModeCompileFinish;
+        }
+
+        private static void ProcessBatchModeCompileFinish(object obj) => AddDefinesAsNeeded();
         private void OnPreprocessAsset() => AddDefinesAsNeeded();
         public void OnActiveBuildTargetChanged(BuildTarget previousTarget, BuildTarget newTarget) => AddDefinesAsNeeded();
 
