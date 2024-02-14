@@ -13,7 +13,7 @@ namespace GI.UnityToolkit.Utilities
         public const string LOGGING_DEBUG_DEFINE = "GI_LOGGING_ENABLED_DEBUG";
         public const string LOGGING_RELEASE_DEFINE = "GI_LOGGING_ENABLED_RELEASE";
 
-#if UNITY_EDITOR || UNITY_DEBUG
+#if DEBUG
         [Conditional(LOGGING_DEBUG_DEFINE)]
 #else
         [Conditional(LOGGING_RELEASE_DEFINE)]
@@ -23,7 +23,7 @@ namespace GI.UnityToolkit.Utilities
             Debug.Log($"{(obj != null ? $"[{obj.GetType().Name}.{callerName}()]" : "")} {message}", obj);
         }
 
-#if UNITY_EDITOR || UNITY_DEBUG
+#if DEBUG
         [Conditional(LOGGING_DEBUG_DEFINE)]
 #else
         [Conditional(LOGGING_RELEASE_DEFINE)]
@@ -33,7 +33,7 @@ namespace GI.UnityToolkit.Utilities
             Debug.LogWarning($"{(obj != null ? $"[{obj.GetType().Name}.{callerName}()]" : "")} {message}", obj);
         }
 
-#if UNITY_EDITOR || UNITY_DEBUG
+#if DEBUG
         [Conditional(LOGGING_DEBUG_DEFINE)]
 #else
         [Conditional(LOGGING_RELEASE_DEFINE)]
@@ -43,7 +43,7 @@ namespace GI.UnityToolkit.Utilities
             Debug.LogError($"{(obj != null ? $"[{obj.GetType().Name}.{callerName}()]" : "")} {message}", obj);
         }
 
-#if UNITY_EDITOR || UNITY_DEBUG
+#if DEBUG
         [Conditional(LOGGING_DEBUG_DEFINE)]
 #else
         [Conditional(LOGGING_RELEASE_DEFINE)]
@@ -53,7 +53,7 @@ namespace GI.UnityToolkit.Utilities
             Debug.Log($"{(obj != null ? $"[{obj.GetType().Name}.{callerName}()]" : "")} {message}");
         }
 
-#if UNITY_EDITOR || UNITY_DEBUG
+#if DEBUG
         [Conditional(LOGGING_DEBUG_DEFINE)]
 #else
         [Conditional(LOGGING_RELEASE_DEFINE)]
@@ -63,7 +63,7 @@ namespace GI.UnityToolkit.Utilities
             Debug.LogWarning($"{(obj != null ? $"[{obj.GetType().Name}.{callerName}()]" : "")} {message}");
         }
 
-#if UNITY_EDITOR || UNITY_DEBUG
+#if DEBUG
         [Conditional(LOGGING_DEBUG_DEFINE)]
 #else
         [Conditional(LOGGING_RELEASE_DEFINE)]
