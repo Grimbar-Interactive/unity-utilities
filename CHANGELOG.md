@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ==
+## [1.1.6] - 2024-02-24
+### Added
+- Added Logger component (moved from Unity Components package)
+
 ## [1.1.5] - 2024-02-24
 ### Modified
 - Updated project information
