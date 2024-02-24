@@ -1,0 +1,18 @@
+{
+    "name": "GrimbarInteractive.UnityToolkit.Utilities.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:012f6a2d4192bc444bb8e5dde855b9bb"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,7 +1,7 @@
 {
-  "name": "com.grimbar-interactive.unity-utilities",
+  "name": "com.grimbarinteractive.unityutilities",
   "displayName": "Unity Utilities",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "unity": "2022.3",
   "description": "Utilities for Unity development.",
   "keywords": [ "utilities", "game", "games", "unity" ],
@@ -11,6 +11,6 @@
   "author": {
 	  "name": "Grimbar Interactive",
 	  "email": "jacob@grimbar.dev",
-	  "url": "http://www.grimbar.dev"
+	  "url": "https://grimbarinteractive.com/"
   }
 }
