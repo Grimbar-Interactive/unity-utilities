@@ -1,10 +1,6 @@
 using UnityEngine;
 
-#if GI_UTILITIES
-using GI.UnityToolkit.Utilities;
-#endif
-
-namespace GI.UnityToolkit.Components.Utilities
+namespace GI.UnityToolkit.Utilities
 {
     /// <summary>
     /// Allows debug statements to be logged from UnityEvents in the inspector.
