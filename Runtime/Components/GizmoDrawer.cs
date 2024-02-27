@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace GI.UnityToolkit.Utilities
+namespace GI.UnityToolkit.Utilities.Components
 {
     public class GizmoDrawer : MonoBehaviour
     {

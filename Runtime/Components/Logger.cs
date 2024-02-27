@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GI.UnityToolkit.Utilities
+namespace GI.UnityToolkit.Utilities.Components
 {
     /// <summary>
     /// Allows debug statements to be logged from UnityEvents in the inspector.
