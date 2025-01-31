@@ -37,7 +37,11 @@ namespace GI.UnityToolkit.Utilities
                 return _instance;
             }
 
+#if UNITY_6000_0_OR_NEWER
+            _instance = (StaticCoroutine) FindFirstObjectByType(typeof(StaticCoroutine));
+#else
             _instance = (StaticCoroutine) FindObjectOfType(typeof(StaticCoroutine));
+#endif
 
             if (_instance != null) return _instance;
 

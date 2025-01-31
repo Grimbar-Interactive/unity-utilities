@@ -6,7 +6,11 @@ namespace GI.UnityToolkit.Utilities
     {
         public static void AccelerateTo(this Rigidbody body, Vector3 targetVelocity, float maxAcceleration)
         {
+#if UNITY_6000_0_OR_NEWER
+            var deltaVelocity = targetVelocity - body.linearVelocity;
+#else
             var deltaVelocity = targetVelocity - body.velocity;
+#endif
             var acceleration = deltaVelocity / Time.deltaTime;
 
             if (acceleration.sqrMagnitude > maxAcceleration * maxAcceleration)

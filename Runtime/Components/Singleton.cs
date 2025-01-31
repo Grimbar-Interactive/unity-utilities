@@ -17,7 +17,12 @@ namespace GI.UnityToolkit.Utilities.Components
             {
                 if (_instance != null) return _instance;
 
+#if UNITY_6000_0_OR_NEWER
+                _instance = FindFirstObjectByType<T>();
+#else
                 _instance = FindObjectOfType<T>();
+#endif
+                
                 if (_instance == null)
                 {
                     // Search inactive objects
