@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ==
+## [1.2.4] - 2025-02-10
+### Added
+- Added new floored modulo operator.
+
+## [1.2.3] - 2025-01-31
+### Rerelease
+- No changes.
+
 ## [1.2.2] - 2025-01-31
 ### Added
 - Unity 6 support.

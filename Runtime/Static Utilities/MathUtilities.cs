@@ -15,10 +15,28 @@ namespace GI.UnityToolkit.Utilities
             return (value - inputFrom) / (inputTo - inputFrom) * (outputTo - outputFrom) + outputFrom;
         }
 
+        /// <summary>
+        /// A special modulo operation that ensures the result is non-negative.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="cap"></param>
+        /// <returns></returns>
         public static int Mod(this int value, int cap)
         {
             var remainder = value % cap;
             return remainder < 0 ? remainder + cap : remainder;
+        }
+
+        /// <summary>
+        /// A floored modulo operation (Standard C# modulo uses truncated division).
+        /// In floored mod the remainder has the same sign as the divisor.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="divisor"></param>
+        /// <returns></returns>
+        public static float FlooredMod(this float value, float divisor)
+        {
+            return value - Mathf.Floor(value / divisor) * divisor;
         }
 
         public static Vector3 GetUp(this Vector3 direction)
